@@ -1,0 +1,302 @@
+{
+  "seed": 42,
+  "synthetic": true,
+  "data": {
+    "RELIANCE": [
+      {
+        "id": "reliance-h1",
+        "ticker": "RELIANCE",
+        "date": "2024-02-27",
+        "title": "Reliance board to consider dividend at upcoming meeting",
+        "polarityHint": "neutral"
+      },
+      {
+        "id": "reliance-h2",
+        "ticker": "RELIANCE",
+        "date": "2024-03-29",
+        "title": "Reliance raises outlook on record retail demand",
+        "polarityHint": "positive"
+      },
+      {
+        "id": "reliance-h3",
+        "ticker": "RELIANCE",
+        "date": "2024-04-24",
+        "title": "Reliance board to consider dividend at upcoming meeting",
+        "polarityHint": "neutral"
+      },
+      {
+        "id": "reliance-h4",
+        "ticker": "RELIANCE",
+        "date": "2024-06-18",
+        "title": "Reliance misses estimates; analysts flag weak retail demand",
+        "polarityHint": "negative"
+      },
+      {
+        "id": "reliance-h5",
+        "ticker": "RELIANCE",
+        "date": "2024-08-02",
+        "title": "Reliance announces leadership change at a key business unit",
+        "polarityHint": "neutral"
+      }
+    ],
+    "TCS": [
+      {
+        "id": "tcs-h1",
+        "ticker": "TCS",
+        "date": "2024-03-01",
+        "title": "TCS to present at investor conference next week",
+        "polarityHint": "neutral"
+      },
+      {
+        "id": "tcs-h2",
+        "ticker": "TCS",
+        "date": "2024-05-06",
+        "title": "TCS shares fall after regulator opens probe",
+        "polarityHint": "negative"
+      },
+      {
+        "id": "tcs-h3",
+        "ticker": "TCS",
+        "date": "2024-06-07",
+        "title": "Brokerages upgrade TCS after robust quarterly numbers",
+        "polarityHint": "positive"
+      },
+      {
+        "id": "tcs-h4",
+        "ticker": "TCS",
+        "date": "2024-07-29",
+        "title": "TCS raises outlook on record deal flow",
+        "polarityHint": "positive"
+      },
+      {
+        "id": "tcs-h5",
+        "ticker": "TCS",
+        "date": "2024-09-03",
+        "title": "TCS raises outlook on record deal flow",
+        "polarityHint": "positive"
+      }
+    ],
+    "INFY": [
+      {
+        "id": "infy-h1",
+        "ticker": "INFY",
+        "date": "2024-02-08",
+        "title": "Infosys to present at investor conference next week",
+        "polarityHint": "neutral"
+      },
+      {
+        "id": "infy-h2",
+        "ticker": "INFY",
+        "date": "2024-04-10",
+        "title": "Infosys shares fall after regulator opens probe",
+        "polarityHint": "negative"
+      },
+      {
+        "id": "infy-h3",
+        "ticker": "INFY",
+        "date": "2024-06-14",
+        "title": "Infosys shares fall after regulator opens probe",
+        "polarityHint": "negative"
+      },
+      {
+        "id": "infy-h4",
+        "ticker": "INFY",
+        "date": "2024-08-16",
+        "title": "Infosys to present at investor conference next week",
+        "polarityHint": "neutral"
+      },
+      {
+        "id": "infy-h5",
+        "ticker": "INFY",
+        "date": "2024-08-19",
+        "title": "Infosys raises outlook on record client spending",
+        "polarityHint": "positive"
+      }
+    ],
+    "HDFCBANK": [
+      {
+        "id": "hdfcbank-h1",
+        "ticker": "HDFCBANK",
+        "date": "2024-01-30",
+        "title": "HDFC Bank to present at investor conference next week",
+        "polarityHint": "neutral"
+      },
+      {
+        "id": "hdfcbank-h2",
+        "ticker": "HDFCBANK",
+        "date": "2024-02-26",
+        "title": "HDFC Bank misses estimates; analysts flag weak loan book",
+        "polarityHint": "negative"
+      },
+      {
+        "id": "hdfcbank-h3",
+        "ticker": "HDFCBANK",
+        "date": "2024-05-10",
+        "title": "HDFC Bank slides as margin pressure weighs on outlook",
+        "polarityHint": "negative"
+      },
+      {
+        "id": "hdfcbank-h4",
+        "ticker": "HDFCBANK",
+        "date": "2024-07-15",
+        "title": "HDFC Bank raises outlook on record loan book",
+        "polarityHint": "positive"
+      },
+      {
+        "id": "hdfcbank-h5",
+        "ticker": "HDFCBANK",
+        "date": "2024-08-22",
+        "title": "Brokerages upgrade HDFC Bank after robust quarterly numbers",
+        "polarityHint": "positive"
+      }
+    ],
+    "ICICIBANK": [
+      {
+        "id": "icicibank-h1",
+        "ticker": "ICICIBANK",
+        "date": "2024-02-09",
+        "title": "ICICI Bank board to consider dividend at upcoming meeting",
+        "polarityHint": "neutral"
+      },
+      {
+        "id": "icicibank-h2",
+        "ticker": "ICICIBANK",
+        "date": "2024-05-27",
+        "title": "ICICI Bank wins large multi-year order; shares rally",
+        "polarityHint": "positive"
+      },
+      {
+        "id": "icicibank-h3",
+        "ticker": "ICICIBANK",
+        "date": "2024-06-03",
+        "title": "ICICI Bank beats estimates as retail lending stays strong",
+        "polarityHint": "positive"
+      },
+      {
+        "id": "icicibank-h4",
+        "ticker": "ICICIBANK",
+        "date": "2024-08-23",
+        "title": "ICICI Bank management reiterates full-year guidance",
+        "polarityHint": "neutral"
+      },
+      {
+        "id": "icicibank-h5",
+        "ticker": "ICICIBANK",
+        "date": "2024-09-05",
+        "title": "ICICI Bank beats estimates as retail lending stays strong",
+        "polarityHint": "positive"
+      }
+    ],
+    "ITC": [
+      {
+        "id": "itc-h1",
+        "ticker": "ITC",
+        "date": "2024-02-26",
+        "title": "ITC to present at investor conference next week",
+        "polarityHint": "neutral"
+      },
+      {
+        "id": "itc-h2",
+        "ticker": "ITC",
+        "date": "2024-03-18",
+        "title": "ITC raises outlook on record FMCG demand",
+        "polarityHint": "positive"
+      },
+      {
+        "id": "itc-h3",
+        "ticker": "ITC",
+        "date": "2024-06-12",
+        "title": "ITC beats estimates as FMCG demand stays strong",
+        "polarityHint": "positive"
+      },
+      {
+        "id": "itc-h4",
+        "ticker": "ITC",
+        "date": "2024-07-01",
+        "title": "ITC slides as margin pressure weighs on outlook",
+        "polarityHint": "negative"
+      },
+      {
+        "id": "itc-h5",
+        "ticker": "ITC",
+        "date": "2024-08-22",
+        "title": "ITC wins large multi-year order; shares rally",
+        "polarityHint": "positive"
+      }
+    ],
+    "SBIN": [
+      {
+        "id": "sbin-h1",
+        "ticker": "SBIN",
+        "date": "2024-02-28",
+        "title": "SBI to present at investor conference next week",
+        "polarityHint": "neutral"
+      },
+      {
+        "id": "sbin-h2",
+        "ticker": "SBIN",
+        "date": "2024-04-22",
+        "title": "SBI management reiterates full-year guidance",
+        "polarityHint": "neutral"
+      },
+      {
+        "id": "sbin-h3",
+        "ticker": "SBIN",
+        "date": "2024-04-29",
+        "title": "SBI misses estimates; analysts flag weak credit offtake",
+        "polarityHint": "negative"
+      },
+      {
+        "id": "sbin-h4",
+        "ticker": "SBIN",
+        "date": "2024-08-12",
+        "title": "SBI raises outlook on record credit offtake",
+        "polarityHint": "positive"
+      },
+      {
+        "id": "sbin-h5",
+        "ticker": "SBIN",
+        "date": "2024-08-20",
+        "title": "SBI beats estimates as credit offtake stays strong",
+        "polarityHint": "positive"
+      }
+    ],
+    "TATAMOTORS": [
+      {
+        "id": "tatamotors-h1",
+        "ticker": "TATAMOTORS",
+        "date": "2024-02-09",
+        "title": "Tata Motors to present at investor conference next week",
+        "polarityHint": "neutral"
+      },
+      {
+        "id": "tatamotors-h2",
+        "ticker": "TATAMOTORS",
+        "date": "2024-03-11",
+        "title": "Tata Motors beats estimates as JLR demand stays strong",
+        "polarityHint": "positive"
+      },
+      {
+        "id": "tatamotors-h3",
+        "ticker": "TATAMOTORS",
+        "date": "2024-05-09",
+        "title": "Tata Motors to present at investor conference next week",
+        "polarityHint": "neutral"
+      },
+      {
+        "id": "tatamotors-h4",
+        "ticker": "TATAMOTORS",
+        "date": "2024-09-04",
+        "title": "Tata Motors misses estimates; analysts flag weak JLR demand",
+        "polarityHint": "negative"
+      },
+      {
+        "id": "tatamotors-h5",
+        "ticker": "TATAMOTORS",
+        "date": "2024-09-06",
+        "title": "Tata Motors slides as margin pressure weighs on outlook",
+        "polarityHint": "negative"
+      }
+    ]
+  }
+}

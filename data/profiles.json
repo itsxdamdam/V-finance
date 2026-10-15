@@ -1,0 +1,85 @@
+{
+  "Conservative": {
+    "label": "Conservative",
+    "description": "Capital preservation. Low drawdown tolerance, prefers documented fundamentals over price action.",
+    "riskTolerance": "low",
+    "horizon": "long",
+    "holdings": {
+      "HDFCBANK": 0.4,
+      "ITC": 0.25,
+      "TCS": 0.2,
+      "ICICIBANK": 0.15
+    },
+    "watchlist": [
+      "HDFCBANK",
+      "ITC",
+      "TCS",
+      "SBIN"
+    ],
+    "maxPositionWeight": 0.25,
+    "maxVolatility": 0.28,
+    "stanceThreshold": 0.35,
+    "agentWeights": {
+      "MomentumAgent": 0.7,
+      "VolumeAnomalyAgent": 0.5,
+      "SentimentAgent": 1,
+      "FilingsRAGAgent": 1.4
+    }
+  },
+  "Moderate": {
+    "label": "Moderate",
+    "description": "Balanced growth over a medium horizon. Equal weight on price, flow, news and filings.",
+    "riskTolerance": "medium",
+    "horizon": "medium",
+    "holdings": {
+      "RELIANCE": 0.22,
+      "HDFCBANK": 0.2,
+      "INFY": 0.18,
+      "TATAMOTORS": 0.15,
+      "ICICIBANK": 0.15,
+      "ITC": 0.1
+    },
+    "watchlist": [
+      "RELIANCE",
+      "INFY",
+      "TATAMOTORS",
+      "SBIN"
+    ],
+    "maxPositionWeight": 0.3,
+    "maxVolatility": 0.4,
+    "stanceThreshold": 0.25,
+    "agentWeights": {
+      "MomentumAgent": 1,
+      "VolumeAnomalyAgent": 1,
+      "SentimentAgent": 1,
+      "FilingsRAGAgent": 1.1
+    }
+  },
+  "Aggressive": {
+    "label": "Aggressive",
+    "description": "Short-horizon, momentum-driven. Accepts high volatility and concentrated positions.",
+    "riskTolerance": "high",
+    "horizon": "short",
+    "holdings": {
+      "TATAMOTORS": 0.45,
+      "INFY": 0.2,
+      "RELIANCE": 0.2,
+      "SBIN": 0.15
+    },
+    "watchlist": [
+      "TATAMOTORS",
+      "ICICIBANK",
+      "SBIN",
+      "INFY"
+    ],
+    "maxPositionWeight": 0.5,
+    "maxVolatility": null,
+    "stanceThreshold": 0.15,
+    "agentWeights": {
+      "MomentumAgent": 1.4,
+      "VolumeAnomalyAgent": 1.2,
+      "SentimentAgent": 0.9,
+      "FilingsRAGAgent": 0.6
+    }
+  }
+}
