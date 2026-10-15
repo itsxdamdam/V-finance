@@ -2,7 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    typedRoutes: false,
+    // API routes read /data with fs at runtime; make sure it ships with the serverless functions.
+    outputFileTracingIncludes: {
+      "/api/**/*": ["./data/**/*"],
+    },
   },
 };
 

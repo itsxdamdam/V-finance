@@ -88,7 +88,13 @@ const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v
 const round2 = (n: number) => Math.round(n * 100) / 100;
 const pct0 = (x: number) => `${Math.round(x * 100)}%`;
 const signed = (x: number) => `${x >= 0 ? "+" : ""}${x.toFixed(2)}`;
-const short = (agent: AgentName) => agent.replace("Agent", "").replace("RAG", " RAG");
+const SHORT: Record<AgentName, string> = {
+  MomentumAgent: "Momentum",
+  VolumeAnomalyAgent: "Volume",
+  SentimentAgent: "Sentiment",
+  FilingsRAGAgent: "Filings RAG",
+};
+const short = (agent: AgentName) => SHORT[agent];
 const list = (xs: string[]) => (xs.length < 2 ? xs.join("") : `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}`);
 
 function annualisedVolatility(ticker: Ticker, asOf: number) {
@@ -215,7 +221,9 @@ export function synthesize({
     });
   }
   if (bull.length && bear.length) {
-    const text = `${list(bull.map((a) => `${short(a.agent)} (${a.label})`))} point up while ${list(bear.map((a) => `${short(a.agent)} (${a.label})`))} point down; confidence scaled ×${conflictFactor.toFixed(2)}.`;
+    const side = (xs: AgentResult[], way: string) =>
+      `${list(xs.map((a) => `${short(a.agent)} (${a.label})`))} ${xs.length > 1 ? "point" : "points"} ${way}`;
+    const text = `${side(bull, "up")} while ${side(bear, "down")}; confidence scaled ×${conflictFactor.toFixed(2)}.`;
     conflicts.push(text);
     steps.push({ kind: "conflict", text, citations: firstIds([...bull, ...bear]) });
   }
@@ -312,9 +320,11 @@ export function synthesize({
     sentences.push({ text: `Only ${evidence.length} of 4 agents produced citable evidence for ${ticker}, so V-Finance withholds a directional view.`, citations: firstIds(evidence) });
   } else {
     sentences.push({ text: `For a ${profileName.toLowerCase()} investor, ${ticker} reads ${stance} at ${pct0(confidence)} confidence as of ${asOfDate}.`, citations: [profileId, ...firstIds(evidence)] });
-    const strongest = [...bull, ...bear].sort((a, b) => weightOf(b) - weightOf(a))[0];
+    // Quote the heaviest genuine (not stress-test-forced) directional signal.
+    const strongest = [...bull, ...bear].filter((a) => a.status === "ok").sort((a, b) => weightOf(b) - weightOf(a))[0];
     if (strongest) {
-      sentences.push({ text: `The strongest input is ${short(strongest.agent)} (${strongest.label}): ${strongest.citations[0]?.snippet}.`, citations: firstIds([strongest]) });
+      const snippet = strongest.citations[0]?.snippet.replace(/\.$/, "");
+      sentences.push({ text: `The strongest input is ${short(strongest.agent)} (${strongest.label}): ${snippet}.`, citations: firstIds([strongest]) });
     }
   }
   if (bull.length && bear.length) {

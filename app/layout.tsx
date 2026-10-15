@@ -3,14 +3,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "V-Finance",
-  description: "Synthetic retail investment intelligence dashboard",
+  description:
+    "V-Finance: multi-agent, profile-aware market signals with citations, on synthetic NSE data. Educational demo, not investment advice.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>{children}</body>

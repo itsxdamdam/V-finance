@@ -1,6 +1,7 @@
 // Synthetic data layer: deterministic generators (seed=42) plus fs-backed loaders.
 // Everything under /data is generated here; nothing comes from a real market feed.
 import fs from "fs";
+import os from "os";
 import path from "path";
 
 export const SEED = 42;
@@ -84,7 +85,10 @@ type MarketFile = {
 
 const DATA_DIR = path.join(process.cwd(), "data");
 const DOCS_DIR = path.join(DATA_DIR, "docs");
-export const SESSIONS_FILE = path.join(DATA_DIR, "sessions.json");
+// Vercel's filesystem is read-only outside /tmp, so the session log moves there (ephemeral per instance).
+export const SESSIONS_FILE = process.env.VERCEL
+  ? path.join(os.tmpdir(), "sessions.json")
+  : path.join(DATA_DIR, "sessions.json");
 const dataFile = (name: string) => path.join(DATA_DIR, name);
 
 // ---------------------------------------------------------------------------
@@ -446,14 +450,14 @@ export function seedAll({ resetSessions = false } = {}) {
   for (const spec of DOC_SPECS) {
     fs.writeFileSync(path.join(DOCS_DIR, `${spec[0]}.md`), docMarkdown(spec));
   }
-  if (resetSessions || !fs.existsSync(SESSIONS_FILE)) writeJson("sessions.json", { sessions: [] });
+  if (resetSessions || !fs.existsSync(SESSIONS_FILE)) fs.writeFileSync(SESSIONS_FILE, JSON.stringify({ sessions: [] }, null, 2) + "\n");
   cache = {};
   return { tickers: TICKERS.length, bars: BARS, docs: DOC_SPECS.length, from: market.dates[0], to: market.dates[BARS - 1] };
 }
 
 export function isSeeded() {
   return (
-    ["market.json", "headlines.json", "profiles.json", "sessions.json"].every((f) => fs.existsSync(dataFile(f))) &&
+    ["market.json", "headlines.json", "profiles.json"].every((f) => fs.existsSync(dataFile(f))) &&
     fs.existsSync(DOCS_DIR) &&
     fs.readdirSync(DOCS_DIR).some((f) => f.endsWith(".md"))
   );
